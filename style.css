@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+
+/* General */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+header, main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    color: antiquewhite;
+    font-family: 'Rye', cursive;
+    -webkit-text-stroke: 1px black; /* width and color */
+    font-size: 5vh;
+}
+
+/* Button */
+button {
+    border: none;
+    background-color: transparent;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover i {
+    color: rgb(102, 102, 102);
+}
+
+i {
+    color: white;
+    font-size: 4em;
+    -webkit-text-stroke: 2px black; 
+}
+
+/* Book */
+.book {
+    width: 40vw;
+    max-width: 350px;
+    height: 70vh;
+    max-height: 500px;
+    position: relative;
+    transition: transform 0.5s;
+}
+
+.paper {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+}
+
+.front {
+    backface-visibility: hidden;
+    border-left: 3px solid #000000;
+}
+
+.front, 
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.border {
+    border-style: dotted;
+    border-color: black;
+    min-height: 98%;
+    min-width: 98%;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.front {
+    z-index: 1;
+}
+
+.back {
+    z-index: 0;
+}
+
+.front-content,
+.back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-content {
+    transform: rotateY(180deg)
+}
+
+/* Paper Flipped */
+.flipped .front,
+.flipped .back {
+    transform: rotateY(-180deg)
+}
+
+/* Paper Z-index */
+#p1 {
+    z-index: 3;
+}
+
+#p2 {
+    z-index: 2;
+}
+
+#p3 {
+    z-index: 1;
+}
+
+/* Customization */
+
+.book-title {
+    font-size: 3em;
+    margin-bottom: 40px;
+}
+
+.cover-img {
+    width: 200px;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+#b1 {
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    justify-content: space-around;
+}
+
+#b1 h2 {
+    font-size: 2em;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#b1 p {
+    margin-bottom: 20px;
+}
+
+
